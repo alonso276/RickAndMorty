@@ -16,9 +16,9 @@ export class PersonajesService {
     this.baseUrl='https://rickandmortyapi.com/api'
   }
 
-  getAll():Promise<any>{
+  getAll(pPage=1):Promise<any>{
 
-    return this.http.get<any>(`${this.baseUrl}/character`).toPromise();
+    return this.http.get<any>(`${this.baseUrl}/character?page=${pPage}`).toPromise();
 
   }
 }
