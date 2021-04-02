@@ -1,14 +1,25 @@
 <div class="container">
   <h1>Lista de personajes</h1>
 
-  <h3>Páginas: {{ numPages }}</h3>
+  <h3>
+    Páginas: {{ numPages }}<br />
+    Número de página: {{ currentPage }}
+  </h3>
 
   <div class="botones">
-    <button class="btn btn-primary" (click)="changePage(false)">
+    <button
+      class="btn btn-primary"
+      (click)="changePage(false)"
+      [disabled]="currentPage === 1"
+    >
       Anterior
     </button>
 
-    <button class="btn btn-primary ml-2" (click)="changePage(true)">
+    <button
+      class="btn btn-primary ml-2"
+      (click)="changePage(true)"
+      [disabled]="currentPage === numPages"
+    >
       Siguiente
     </button>
   </div>
